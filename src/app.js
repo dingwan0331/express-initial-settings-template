@@ -5,6 +5,7 @@ import ccqp from "ccqp";
 
 import { default as indexRouter } from "./indexRouter.js";
 import { sequelize } from "./models/index.js";
+import { errorResponder } from "./middlewares/errorHandlers.js";
 
 const NODE_ENV = process.env.NODE_ENV;
 const loggerSet = {
@@ -26,5 +27,6 @@ app.use(cors());
 app.use(logger(loggerOption));
 app.use(ccqp);
 app.use(indexRouter);
+app.use(errorResponder);
 
 export default app;
