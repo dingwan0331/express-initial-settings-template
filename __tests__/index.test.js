@@ -11,4 +11,8 @@ describe("GET /ping", () => {
       "application/json; charset=utf-8"
     );
   });
+  test("404 Not Found Error", async () => {
+    const response = await supertest(app).get("");
+    expect(response.statusCode).toBe(404);
+  });
 });
