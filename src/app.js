@@ -5,6 +5,7 @@ import ccqp from "ccqp";
 
 import { default as indexRouter } from "./indexRouter.js";
 import { errorResponder } from "./middlewares/errorHandlers.js";
+import { NotFoundError } from "./utils/errors.js";
 
 const NODE_ENV = process.env.NODE_ENV;
 const loggerSet = {
@@ -13,12 +14,18 @@ const loggerSet = {
 };
 const loggerOption = loggerSet[NODE_ENV];
 
+const notFoundMiddleware = (req, res, next) => {
+  const err = new NotFoundError();
+  next(err);
+};
+
 const app = express();
 
 app.use(cors());
 app.use(logger(loggerOption));
 app.use(ccqp);
 app.use(indexRouter);
+app.use(notFoundMiddleware);
 app.use(errorResponder);
 
 export default app;
