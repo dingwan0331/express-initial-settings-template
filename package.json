@@ -1,6 +1,5 @@
 {
-  "name": "wherever-you-are",
-  "version": "1.0.0",
+  "name": "initial-settings",
   "description": "",
   "main": "app.js",
   "type": "module",
@@ -14,17 +13,6 @@
     "dev": "cross-env NODE_ENV=development nodemon src/server.js",
     "test": "cross-env NODE_ENV=test jest"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dingwan0331/wherever-you-are.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dingwan0331/wherever-you-are/issues"
-  },
-  "homepage": "https://github.com/dingwan0331/wherever-you-are#readme",
   "dependencies": {
     "@babel/core": "^7.19.0",
     "@babel/node": "^7.18.10",
