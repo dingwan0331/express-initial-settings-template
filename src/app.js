@@ -24,8 +24,10 @@ const app = express();
 app.use(cors());
 app.use(logger(loggerOption));
 app.use(ccqp);
+
 app.use(indexRouter);
 app.use(notFoundMiddleware);
+
 app.use(errorResponder);
 
 export default app;
