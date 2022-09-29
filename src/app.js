@@ -2,10 +2,13 @@ import express from "express";
 import cors from "cors";
 import { default as logger } from "morgan";
 import ccqp from "ccqp";
+import dotenv from "dotenv";
 
 import { default as indexRouter } from "./indexRouter.js";
 import { errorResponder } from "./middlewares/errorHandlers.js";
 import { NotFoundError } from "./utils/errors.js";
+
+dotenv.config();
 
 const NODE_ENV = process.env.NODE_ENV;
 const loggerSet = {

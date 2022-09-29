@@ -1,9 +1,11 @@
 import http from "http";
-import { SERVER_PORT } from "./config/index.js";
 import app from "./app.js";
+
 /* DB import
 import { sequelize } from "./models/index.js";
 */
+
+const SERVER_PORT = process.env.SERVER_PORT || 8000;
 const server = http.createServer(app);
 
 const serverStart = () => {
